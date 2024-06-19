@@ -22,16 +22,17 @@
 </div>
 <div class="main__container">
     <form action="/admin/login" method="POST" class="article__review_new">
+        @csrf
         <div class="article__review_input_wr">
             <div class="article__review_input_label">Username</div>
-            <input class="article__review_input" type="text" placeholder="Username">
+            <input class="article__review_input" type="text" placeholder="Username" name="username">
         </div>
         <div class="article__review_input_wr">
             <div class="article__review_input_label">Password</div>
-            <input class="article__review_input" type="password" placeholder="Password">
+            <input class="article__review_input" type="password" placeholder="Password" name="password">
         </div>
         <div class="article__review_addbtn">
-            <div class="article__review_btn">Auth</div>
+            <button class="article__review_btn" type="submit">Auth</button>
         </div>
     </form>
 </div>

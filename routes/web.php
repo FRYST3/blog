@@ -19,4 +19,11 @@ use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class,'index'])->name('index');
 Route::get('/article/{id}', [PagesController::class,'article']);
 
-Route::get('/admin/login', [PagesController::class,'admin_login']);
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('/login', [PagesController::class, 'admin_login']);
+    Route::post('/login', [AdminController::class, 'login']);
+
+    Route::group(['middleware' => 'admin'], function () {
+        Route::get('/', [AdminController::class, 'index']);
+    });
+});
