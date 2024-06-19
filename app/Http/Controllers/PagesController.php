@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Articles;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -13,7 +14,10 @@ class PagesController extends Controller
         return view('index', compact('articles'));
     }
 
-    public function article() {
-        return view('article');
+    public function article($id) {
+        $article = Articles::where('id', $id)->first();
+        $comments = Comments::where('article_id', $id)->get();
+
+        return view('article', compact('article', 'comments'));
     }
 }

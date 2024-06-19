@@ -3,14 +3,12 @@
 @section('content')
     <div class="article__page">
         <div class="article__page_main">
-            <div class="article__name">Grid system for better Design User Interface</div>
-            <img src="/assets/images/articles/article.png" class="article__photo">
+            <div class="article__name">{{$article->title}}</div>
+            <img src="{{$article->image}}" alt="{{$article->title}}" class="article__photo">
             <div class="article__fulltext">
-                A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.
-                <br>
-                If you’ve been to New York City and have walked the streets, it is easy to figure out how to get from one place to another because of the grid system that the city is built on. Just as the predictability of a city grid helps locals and tourists get around easily, so do webpage grids provide a structure that guides users and designers alike. Because of their consistent reference point, grids improve page readability and scannability and allow people to quickly get where they need to go.
+                {{$article->text}}
             </div>
-            <div class="article__date">Sunday , 1 Jan 2023</div>
+            <div class="article__date">{{$article->created_at->format('d.m.Y H:i')}}</div>
         </div>
         <div class="article__reviews">
             <div class="article__review_new">
@@ -26,12 +24,14 @@
                     <div class="article__review_btn">Send</div>
                 </div>
             </div>
-            <div class="article__review">
-                <div class="article__review_name">FRYST</div>
-                <div class="article__review_text">
-                    A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements.
+            @foreach($comments as $comment)
+                <div class="article__review">
+                    <div class="article__review_name">{{$comment->name}}</div>
+                    <div class="article__review_text">
+                        {{$comment->review}}
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection
