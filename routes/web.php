@@ -18,3 +18,5 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class,'index'])->name('index');
 Route::get('/article/{id}', [PagesController::class,'article']);
+
+Route::get('/admin/login', [PagesController::class,'admin_login']);
