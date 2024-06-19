@@ -12,4 +12,8 @@ class PagesController extends Controller
 
         return view('index', compact('articles'));
     }
+
+    public function article() {
+        return view('article');
+    }
 }
