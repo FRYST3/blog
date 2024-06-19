@@ -226,6 +226,7 @@ a {
     font-size: 16px;
     line-height: 150%;
     color: #FFF;
+    cursor: pointer;
 }
 
 .article__review_input.feedback {
@@ -233,6 +234,7 @@ a {
     height: 135px;
     width: 100%;
 }
+
 
 
 

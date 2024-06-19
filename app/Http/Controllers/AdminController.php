@@ -31,4 +31,55 @@ class AdminController extends Controller
 
         return view('admin.index', compact('articles'));
     }
+
+    public function article_delete($id)
+    {
+        Articles::where('id', $id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function article_edit($id)
+    {
+        $article = Articles::where('id', $id)->first();
+
+        return view('admin.edit', compact('article'));
+    }
+
+    public function article_newpage()
+    {
+        return view('admin.new');
+    }
+
+    public function article_save(Request $r, $id)
+    {
+        if ($r->title == NULL || $r->text == NULL || $r->img == NULL || $r->desc == NULL) {
+            return redirect()->back()->with('error', 'Заполните все поля');
+        }
+
+        Articles::where('id', $id)->update([
+            'title' => $r->title,
+            'text' => $r->text,
+            'image' => $r->img,
+            'description' => $r->desc
+        ]);
+
+        return redirect('/admin')->with('success', 'Успешно');
+    }
+
+    public function article_new(Request $r)
+    {
+        if ($r->title == NULL || $r->text == NULL || $r->img == NULL || $r->desc == NULL) {
+            return redirect()->back()->with('error', 'Заполните все поля');
+        }
+
+        Articles::insert([
+            'title' => $r->title,
+            'text' => $r->text,
+            'image' => $r->img,
+            'description' => $r->desc
+        ]);
+
+        return redirect('/admin')->with('success', 'Успешно');
+    }
 }

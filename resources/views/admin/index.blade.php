@@ -25,6 +25,11 @@
     <a href="/admin/article/new" class="article__new">
         Add Article
     </a>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="main__cards">
         @foreach($articles as $article)
             <div href="/article/{{$article->id}}" class="articles__card">
