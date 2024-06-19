@@ -1,18 +1,38 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layout')
 
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-    <script src="/assets/js/components/jquery.min.js"></script>
-    <script src="/assets/js/app.js"></script>
-
-    <title>Blog || FRYST</title>
-</head>
-<body>
-
-</body>
-</html>
+@section('content')
+    <div class="main__cards">
+        <a href="/article" class="articles__card">
+            <img src="/assets/images/articles/article.png" class="article__img">
+            <div class="article__created">Sunday, 1 Jan 2023</div>
+            <div class="article__title">Bill Walsh leadership lessons</div>
+            <div class="article__description">
+                Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?
+            </div>
+        </a>
+        <a href="/article" class="articles__card">
+            <img src="/assets/images/articles/article.png" class="article__img">
+            <div class="article__created">Sunday, 1 Jan 2023</div>
+            <div class="article__title">Bill Walsh leadership lessons</div>
+            <div class="article__description">
+                Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?
+            </div>
+        </a>
+        <a href="/article" class="articles__card">
+            <img src="/assets/images/articles/article.png" class="article__img">
+            <div class="article__created">Sunday, 1 Jan 2023</div>
+            <div class="article__title">Bill Walsh leadership lessons</div>
+            <div class="article__description">
+                Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?
+            </div>
+        </a>
+        <a href="/article" class="articles__card">
+            <img src="/assets/images/articles/article.png" class="article__img">
+            <div class="article__created">Sunday, 1 Jan 2023</div>
+            <div class="article__title">Bill Walsh leadership lessons</div>
+            <div class="article__description">
+                Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?
+            </div>
+        </a>
+    </div>
+@endsection
