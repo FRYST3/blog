@@ -36,7 +36,7 @@ class AdminController extends Controller
     {
         Articles::where('id', $id)->delete();
 
-        return redirect()->back();
+        return response()->json(['success' => true]);
     }
 
     public function article_edit($id)

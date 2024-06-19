@@ -34,7 +34,7 @@
     @endif
     <div class="main__cards">
         @foreach($articles as $article)
-            <div href="/article/{{$article->id}}" class="articles__card">
+            <div class="articles__card" data-id="{{$article->id}}">
                 <img src="{{$article->image}}" alt="{{$article->title}}" class="article__img">
                 <div class="article__created">{{$article->created_at->format('d.m.Y H:i')}}</div>
                 <div class="article__title">{{$article->title}}</div>
@@ -45,9 +45,9 @@
                     <a href="/admin/article/edit/{{$article->id}}" class="article__edit">
                         <i class='bx bxs-edit' ></i>
                     </a>
-                    <a href="/admin/article/delete/{{$article->id}}" class="article__delete">
+                    <div data-id="{{$article->id}}" class="article__delete">
                         <i class='bx bxs-trash'></i>
-                    </a>
+                    </div>
                 </div>
             </div>
         @endforeach

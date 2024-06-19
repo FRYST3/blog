@@ -19,17 +19,18 @@ use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class,'index'])->name('index');
 Route::get('/article/{id}', [PagesController::class,'article']);
 
+Route::post('/get/blogs', [MainController::class,'blogs']);
 Route::post('/review/new', [MainController::class,'review_new']);
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/login', [PagesController::class, 'admin_login']);
+    Route::get('/login', [PagesController::class, 'admin_login'])->name('admin_login');
     Route::post('/login', [AdminController::class, 'login']);
 
     Route::group(['middleware' => 'admin'], function () {
-        Route::get('/', [AdminController::class, 'index']);
-        Route::get('/article/delete/{id}', [AdminController::class, 'article_delete']);
+        Route::get('/', [AdminController::class, 'index'])->name('admin_index');
+        Route::post('/article/delete/{id}', [AdminController::class, 'article_delete']);
         Route::get('/article/edit/{id}', [AdminController::class, 'article_edit']);
-        Route::get('/article/new', [AdminController::class, 'article_newpage']);
+        Route::get('/article/new', [AdminController::class, 'article_newpage'])->name('admin_article_new');
         Route::post('/article/save/{id}', [AdminController::class, 'article_save']);
         Route::post('/article/new', [AdminController::class, 'article_new']);
     });

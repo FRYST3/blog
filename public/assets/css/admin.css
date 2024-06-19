@@ -173,6 +173,7 @@ a {
     font-size: 16px;
     background: #884444;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .article__edit {

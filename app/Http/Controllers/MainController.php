@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Articles;
 use App\Models\Comments;
 use Illuminate\Http\Request;
 
@@ -19,5 +20,12 @@ class MainController extends Controller
         ]);
 
         return response()->json(['success' => true, 'message' => 'Success', 'name' => $r->username, 'review' => $r->feedback]);
+    }
+
+    public function blogs()
+    {
+        $articles = Articles::all();
+
+        return response()->json(['success' => true, 'data' => $articles]);
     }
 }

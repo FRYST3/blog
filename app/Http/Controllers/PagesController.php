@@ -9,9 +9,8 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index() {
-        $articles = Articles::orderBy('id', 'desc')->get();
 
-        return view('index', compact('articles'));
+        return view('index');
     }
 
     public function article($id) {
