@@ -14,24 +14,26 @@
             <div class="article__review_new">
                 <div class="article__review_input_wr">
                     <div class="article__review_input_label">Username</div>
-                    <input class="article__review_input" type="text" placeholder="Enter username">
+                    <input class="article__review_input" type="text" id="username" placeholder="Enter username">
                 </div>
                 <div class="article__review_input_wr">
                     <div class="article__review_input_label">Feedback</div>
-                    <textarea class="article__review_input feedback" placeholder="Enter feedback"></textarea>
+                    <textarea class="article__review_input feedback" id="feedback" placeholder="Enter feedback"></textarea>
                 </div>
                 <div class="article__review_addbtn">
-                    <div class="article__review_btn">Send</div>
+                    <div class="article__review_btn send_review" data-id="{{$article->id}}">Send</div>
                 </div>
             </div>
-            @foreach($comments as $comment)
-                <div class="article__review">
-                    <div class="article__review_name">{{$comment->name}}</div>
-                    <div class="article__review_text">
-                        {{$comment->review}}
+            <div class="article__feedbacks">
+                @foreach($comments as $comment)
+                    <div class="article__review">
+                        <div class="article__review_name">{{$comment->name}}</div>
+                        <div class="article__review_text">
+                            {{$comment->review}}
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

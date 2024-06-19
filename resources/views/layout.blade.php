@@ -7,8 +7,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/notifyme.css">
 
     <script src="/assets/js/components/jquery.min.js"></script>
+    <script src="/assets/js/components/notifyme.min.js"></script>
     <script src="/assets/js/app.js"></script>
 
     <title>Blog || FRYST</title>

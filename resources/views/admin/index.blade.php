@@ -8,8 +8,10 @@
 
     <link rel="stylesheet" href="/assets/css/admin.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/assets/css/notifyme.css">
 
     <script src="/assets/js/components/jquery.min.js"></script>
+    <script src="/assets/js/components/notifyme.min.js"></script>
     <script src="/assets/js/admin.js"></script>
 
     <title>Blog || FRYST</title>

@@ -19,6 +19,8 @@ use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class,'index'])->name('index');
 Route::get('/article/{id}', [PagesController::class,'article']);
 
+Route::post('/review/new', [MainController::class,'review_new']);
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/login', [PagesController::class, 'admin_login']);
     Route::post('/login', [AdminController::class, 'login']);

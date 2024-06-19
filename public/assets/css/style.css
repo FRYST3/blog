@@ -235,6 +235,12 @@ a {
     width: 100%;
 }
 
+.article__feedbacks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
 
 
