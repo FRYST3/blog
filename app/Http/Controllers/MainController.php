@@ -22,10 +22,15 @@ class MainController extends Controller
         return response()->json(['success' => true, 'message' => 'Success', 'name' => $r->username, 'review' => $r->feedback]);
     }
 
-    public function blogs()
+    public function blogs(Request $r)
     {
-        $articles = Articles::all();
+        $page = $r->page;
+        $perPage = 6;
+        $articles = Articles::orderBy('created_at', 'desc')->skip(($page - 1) * $perPage)->take($perPage)->get();
 
-        return response()->json(['success' => true, 'data' => $articles]);
+        $totalArticles = Articles::count();
+        $totalPages = ceil($totalArticles / $perPage);
+
+        return response()->json(['success' => true, 'data' => $articles, 'currentPage' => $page, 'totalPages' => $totalPages]);
     }
 }
